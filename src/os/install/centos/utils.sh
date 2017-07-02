@@ -31,7 +31,8 @@ autoremove() {
     # dependencies for other packages and are no longer needed.
 
     execute \
-        "sudo yum autoremove -q -y"
+        "sudo yum autoremove -q -y" \
+        "YUM (autoremove)"
 
 }
 
@@ -86,7 +87,8 @@ upgrade() {
     # packages.)
 
     execute \
-        "sudo yum upgrade -q -y"
+        "sudo yum upgrade -q -y" \
+        "YUM (upgrade)"
 
 }
 
