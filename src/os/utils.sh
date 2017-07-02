@@ -127,7 +127,7 @@ get_os() {
         os="macos"
     elif [ "$kernelName" == "Linux" ] && [ -e "/etc/lsb-release" ]; then
         os="ubuntu"
-    elif [ "$kernelName" == "Linux"] && [ -e "/etc/redhat-release"]; then
+    elif [ "$kernelName" == "Linux" ] && [ -e "/etc/redhat-release" ]; then
       os="centos"
     else
         os="$kernelName"
