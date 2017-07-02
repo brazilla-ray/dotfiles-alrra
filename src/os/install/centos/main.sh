@@ -6,10 +6,9 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-update
 upgrade
 
-./build-essentials.sh
+./development_tools.sh
 ./../nvm.sh
 
 #./browsers.sh

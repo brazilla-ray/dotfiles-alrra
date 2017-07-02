@@ -59,6 +59,25 @@ package_is_installed() {
     rpm -q "$1" &> /dev/null
 }
 
+# Take advantage of yum's package groups.
+install_group() {
+
+    declare -r GROUP="$2"
+    declare -r GROUP_READABLE_NAME="$1"
+
+    if ! group_is_installed "$GROUP"; then
+      execute "sudo yum group install -q -y $GROUP" "GROUP_READABLE_NAME"
+    else
+      print_success "$GROUP_READABLE_NAME"
+    fi
+}
+
+group_is_installed() {
+  yum group list "$1" &> /dev/null
+}
+
+
+
 # Used by browsers.sh and main.sh. Alter for yum.
 upgrade() {
 
