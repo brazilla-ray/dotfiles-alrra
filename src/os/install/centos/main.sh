@@ -17,8 +17,8 @@ upgrade
 # ./image_tools.sh
 #./misc.sh
 ./misc_tools.sh
-./../npm.sh
+#./../npm.sh
 ./tmux.sh
-./../vim.sh
+# ./../vim.sh
 
 ./cleanup.sh
