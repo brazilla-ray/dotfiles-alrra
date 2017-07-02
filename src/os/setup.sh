@@ -263,7 +263,10 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    ./create_directories.sh
+    # Skipping for now. Creates a directory for torrents. Not needed for
+    # CentOS.
+    # TO-DO: conditionally skip for OSes.
+    #./create_directories.sh
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
