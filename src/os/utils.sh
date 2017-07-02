@@ -127,6 +127,8 @@ get_os() {
         os="macos"
     elif [ "$kernelName" == "Linux" ] && [ -e "/etc/lsb-release" ]; then
         os="ubuntu"
+    elif [ "$kernelName" == "Linux"] && [ -e "/etc/redhat-release"]; then
+      os="centos"
     else
         os="$kernelName"
     fi
@@ -148,6 +150,8 @@ get_os_version() {
         version="$(sw_vers -productVersion)"
     elif [ "$os" == "ubuntu" ]; then
         version="$(lsb_release -d | cut -f2 | cut -d' ' -f2)"
+    elif [ "$os" == "centos" ]; then
+        version="$(cat /etc/redhat-release | cut -d' ' -f4)"
     fi
 
     printf "%s" "$version"

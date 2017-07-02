@@ -150,6 +150,7 @@ verify_os() {
 
     declare -r MINIMUM_MACOS_VERSION="10.10"
     declare -r MINIMUM_UBUNTU_VERSION="14.04"
+    declare -r MINIMUM_CENTOS_VERSION="7.3"
 
     local os_name=""
     local os_version=""
@@ -188,8 +189,24 @@ verify_os() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    # Check if the OS is `CentOS` and
+    # it's above the required version.
+
+  elif [ "$os_name" == "Linux" ] && [ -e "/etc/redhat-release" ]; then
+
+      os_version="$(cat /etc/redhat-release | cut -d' ' -f4)"
+
+      if is_supported_version "$os_version" "$MINIMUM_CENTOS_VERSION"; then
+          return 0
+      else
+          printf "Sorry, this script is intended only for CentOS %s+" "$MINIMUM_CENTOS_VERSION"
+      fi
+
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     else
-        printf "Sorry, this script is intended only for macOS and Ubuntu!"
+        printf "Sorry, this script is intended only for macOS, Ubuntu, or CentOS!"
     fi
 
     return 1
