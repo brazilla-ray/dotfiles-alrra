@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Directories
+
+alias lsa="ls -al"
