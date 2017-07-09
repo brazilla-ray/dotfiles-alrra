@@ -9,7 +9,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 upgrade
 
 ./development_tools.sh
-#./../nvm.sh
+./../nvm.sh
 
 #./browsers.sh
 #./compression_tools.sh
