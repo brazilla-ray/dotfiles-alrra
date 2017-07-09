@@ -41,7 +41,7 @@ Icon
 *.un~
 .netrwhist
 Session.vim
-
+src/vim/vim/plugins/
 
 # ----------------------------------------------------------------------
 # | Windows                                                            |
