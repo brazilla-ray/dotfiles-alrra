@@ -1,0 +1,2 @@
+alias md="mkdir -p"
+alias mdgo="mkdir -p && cd $_"

@@ -1,4 +1,5 @@
 #!/bin/bash
+#
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -21,6 +22,19 @@ alias path='printf "%b\n" "${PATH//:/\\n}"'
 alias q="exit"
 alias rm="rm -rf --"
 alias t="tmux"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Load custom aliases.
+
+# Set globstar for directory wildcards.
+shopt -s globstar
+
+
+for i in ./aliases/custom/**/bash_aliases
+do
+  . "$i"
+done
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
