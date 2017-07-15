@@ -18,3 +18,13 @@ if [ -f "$BASH_COMPLETION_PATH" ]; then
     complete -o default -o nospace -F _git g
 
 fi
+
+declare -r DOCKER_COMPLETION_PATH="$(brew --prefix 2> /dev/null)/etc/bash_completion.d/docker"
+
+if [ -f "$DOCKER_COMPLETION_PATH" ]; then
+
+    # Load Docker completions
+
+    . "$DOCKER_COMPLETION_PATH"
+
+fi
