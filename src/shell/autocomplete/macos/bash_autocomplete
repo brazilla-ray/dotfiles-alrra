@@ -19,6 +19,9 @@ if [ -f "$BASH_COMPLETION_PATH" ]; then
 
 fi
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Docker copletions
+
 declare -r DOCKER_COMPLETION_PATH="$(brew --prefix 2> /dev/null)/etc/bash_completion.d/docker"
 
 if [ -f "$DOCKER_COMPLETION_PATH" ]; then
@@ -28,3 +31,17 @@ if [ -f "$DOCKER_COMPLETION_PATH" ]; then
     . "$DOCKER_COMPLETION_PATH"
 
 fi
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Git completions
+
+declare -r GIT_COMPLETION_PATH="$(brew --prefix 2> /dev/null)/etc/bash_completion.d/git-completion.bash"
+
+if [ -f "$GIT_COMPLETION_PATH" ]; then
+
+    # Load Git completions
+
+    . "$GIT_COMPLETION_PATH"
+
+fi
+
